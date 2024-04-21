@@ -15,7 +15,7 @@ export default defineComponent({
     const taxPrice = ref(0);
 
     watch(price, () => {
-      taxPrice.value = price.value * 1.1;
+      taxPrice.value = Math.floor(price.value * 1.1);
     });
 
     return {
