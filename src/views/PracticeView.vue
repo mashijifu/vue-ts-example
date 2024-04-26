@@ -1,7 +1,8 @@
 <template>
   <div>
-    <!-- isActiveの条件によって表示非表示が切り替わるよう、v-ifを使った処理を追加しなさい -->
     <p v-if="isActive">テキスト1</p>
+    <!-- isActiveがfalseの場合に、"テキスト2"が表示表示されるよう処理を追加しなさい -->
+    <p v-else>テキスト2</p>
   </div>
 </template>
 <script lang="ts">
