@@ -1,40 +1,31 @@
 <template>
   <div>
-    <!-- v-forを使ってdataListの配列オブジェクトをidが奇数のものだけテーブルの要素として表示しなさい -->
+    <!-- ボタンの押下で2の倍数の値が追加される -->
+    <button v-on:click="addTwoNum">next</button>
     <table>
-      <thead>
-        <tr>
-          <th>id：</th>
-          <th>name：</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(item, index) in oddList" :key="index">
-          <td>{{ item.id }}</td>
-          <td>{{ item.name }}</td>
-        </tr>
-      </tbody>
+      <tr>
+        <th>2の倍数</th>
+      </tr>
+      <tr v-for="(v, index) in data" :key="index">
+        <td>{{ v }}</td>
+      </tr>
     </table>
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, computed } from "@vue/composition-api";
+import { ref, defineComponent } from "@vue/composition-api";
 
 export default defineComponent({
   setup() {
-    const dataList = [
-      { id: 1, name: "バナナ" },
-      { id: 2, name: "イチゴ" },
-      { id: 3, name: "スイカ" },
-    ];
+    const data = ref([2]);
 
-    const oddList = computed(() => {
-      return dataList.filter((data) => data.id % 2 !== 0);
-    });
+    const addTwoNum = () => {
+      data.value.push(data.value[data.value.length - 1] * 2);
+    };
 
     return {
-      dataList,
-      oddList,
+      data,
+      addTwoNum,
     };
   },
 });
