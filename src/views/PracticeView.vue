@@ -1,8 +1,9 @@
 <template>
   <div>
-    <p v-if="isActive">テキスト1</p>
-    <!-- isActiveがfalseの場合に、"テキスト2"が表示表示されるよう処理を追加しなさい -->
-    <p v-else>テキスト2</p>
+    <p v-if="status === 0">仮会員</p>
+    <!-- statusが1の場合"会員"が表示、それ以外の場合"非会員"と表示されるようにしなさい -->
+    <p v-else-if="status === 1">会員</p>
+    <p v-else>非会員</p>
   </div>
 </template>
 <script lang="ts">
@@ -10,10 +11,10 @@ import { defineComponent } from "@vue/composition-api";
 
 export default defineComponent({
   setup() {
-    const isActive = false;
+    const status = 0;
 
     return {
-      isActive,
+      status,
     };
   },
 });
