@@ -1,7 +1,9 @@
 <template>
   <div>
-    <!-- isActiveの条件によって表示非表示が切り替わるよう、v-showを使った処理を追加しなさい -->
-    <p v-show="isActive">テキスト1</p>
+    <!-- v-forを使ってdataListの配列をリスト表示しなさい -->
+    <ul>
+      <li v-for="(data, index) in dataList" :key="index">{{ data }}</li>
+    </ul>
   </div>
 </template>
 <script lang="ts">
@@ -9,10 +11,10 @@ import { defineComponent } from "@vue/composition-api";
 
 export default defineComponent({
   setup() {
-    const isActive = false;
+    const dataList = ["バナナ", "イチゴ", "スイカ"];
 
     return {
-      isActive,
+      dataList,
     };
   },
 });
