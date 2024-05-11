@@ -1,28 +1,23 @@
 <template>
   <div>
-    <input type="text" v-model="num1" />
-    <input type="text" v-model="num2" />
-    <!-- 合算した値の表示 -->
-    <p>{{ sum() }}</p>
+    <label for="baseball">野球</label>
+    <input id="baseball" type="checkbox" value="baseball" v-model="sports" />
+    <label for="football">サッカー</label>
+    <input id="football" type="checkbox" value="football" v-model="sports" />
+    <div>
+      {{ sports }}
+    </div>
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, ref } from "@vue/composition-api";
+import { ref, defineComponent } from "@vue/composition-api";
 
 export default defineComponent({
   setup() {
-    const num1 = ref(0);
-    const num2 = ref(0);
-
-    const sum = () => {
-      // 2つのinputの数値を合算する処理の追加
-      return Number(num1.value) + Number(num2.value);
-    };
+    const sports = ref(["football"]);
 
     return {
-      num1,
-      num2,
-      sum,
+      sports,
     };
   },
 });
