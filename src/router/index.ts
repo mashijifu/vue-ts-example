@@ -3,6 +3,7 @@ import VueRouter, { RouteConfig } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import PracticeView from "../views/PracticeView.vue";
 import AddButtonView from "../views/AddButtonView.vue";
+import SlotView from "../views/SlotView.vue";
 
 Vue.use(VueRouter);
 
@@ -30,6 +31,11 @@ const routes: Array<RouteConfig> = [
     path: "/add-button",
     name: "add-button",
     component: AddButtonView,
+  },
+  {
+    path: "/slot",
+    name: "slot",
+    component: SlotView,
   },
 ];
 
