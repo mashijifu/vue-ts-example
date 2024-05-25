@@ -4,6 +4,7 @@ import HomeView from "../views/HomeView.vue";
 import PracticeView from "../views/PracticeView.vue";
 import AddButtonView from "../views/AddButtonView.vue";
 import SlotView from "../views/SlotView.vue";
+import ExampleView from "../views/ExampleView.vue";
 
 Vue.use(VueRouter);
 
@@ -36,6 +37,11 @@ const routes: Array<RouteConfig> = [
     path: "/slot",
     name: "slot",
     component: SlotView,
+  },
+  {
+    path: "/example/:id",
+    name: "example",
+    component: ExampleView,
   },
 ];
 
