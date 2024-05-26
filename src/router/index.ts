@@ -39,7 +39,8 @@ const routes: Array<RouteConfig> = [
     component: SlotView,
   },
   {
-    path: "/example/:id",
+    // path: "/example/:id",
+    path: "/example",
     name: "example",
     component: ExampleView,
   },
